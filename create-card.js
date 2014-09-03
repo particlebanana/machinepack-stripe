@@ -10,7 +10,8 @@ module.exports = {
   id: 'create-card',
   machinepack: 'stripe',
   description: 'Create a new card for a customer or recipient.',
-  notes: 'When you create a new credit card, you must specify a customer or recipient to create it on. Creating a new credit card will not change the card owner\'s existing default credit card; you should update the customer or recipient with a new default_card for that. If the card\'s owner has no default credit card, the added credit card will become the default.  Whenever you create a new card for a customer, Stripe will automatically validate the card. See https://stripe.com/docs/api#create_card for more information.',
+  notes: 'When you create a new credit card, you must specify a customer or recipient to create it on. Creating a new credit card will not change the card owner\'s existing default credit card; you should update the customer or recipient with a new default_card for that. If the card\'s owner has no default credit card, the added credit card will become the default.  Whenever you create a new card for a customer, Stripe will automatically validate the card.',
+  moreInfoURL: 'https://stripe.com/docs/api#create_card',
   noSideEffects: true,
   inputs: {
     token: {
