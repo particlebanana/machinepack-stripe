@@ -1,0 +1,35 @@
+{
+  "name": "machinepack-stripe",
+  "version": "0.1.3",
+  "description": "Machines for working with the Stripe API.",
+  "scripts": {
+    "test": "mocha -b"
+  },
+  "keywords": [
+    "machine",
+    "machines",
+    "stripe",
+    "stripe-api"
+  ],
+  "contributors": ["Nick Crumrine", "Mike McNeil", "Scott Gress", "Cody Stoltman"],
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.19.0"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "node-machine": "^0.2.1",
+  },
+  "machinepack": {
+    "focus": "stripe",
+    "machine-api": "~0.0.0",
+    "machines": [
+      "create-charge",
+      "capture-charge",
+      "list-cards",
+      "create-card",
+      "delete-card",
+      "update-card",
+    ]
+  }
+}
