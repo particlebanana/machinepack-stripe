@@ -1,6 +1,6 @@
 {
   "name": "machinepack-stripe",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Machines for working with the Stripe API.",
   "scripts": {
     "test": "mocha -b"
@@ -11,7 +11,12 @@
     "stripe",
     "stripe-api"
   ],
-  "contributors": ["Nick Crumrine", "Mike McNeil", "Scott Gress", "Cody Stoltman"],
+  "contributors": [
+    "Nick Crumrine",
+    "Mike McNeil",
+    "Scott Gress",
+    "Cody Stoltman"
+  ],
   "license": "MIT",
   "devDependencies": {
     "mocha": "~1.19.0"
