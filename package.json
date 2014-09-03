@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "lodash": "^2.4.1",
-    "node-machine": "^0.2.1",
+    "node-machine": "^0.2.1"
   },
   "machinepack": {
     "focus": "stripe",
@@ -29,7 +29,7 @@
       "list-cards",
       "create-card",
       "delete-card",
-      "update-card",
+      "update-card"
     ]
   }
 }
