@@ -1,6 +1,6 @@
 {
   "name": "machinepack-stripe",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Machines for working with the Stripe API.",
   "scripts": {
     "test": "mocha -b"
