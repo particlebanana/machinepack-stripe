@@ -22,19 +22,18 @@
     "mocha": "~1.19.0"
   },
   "dependencies": {
-    "lodash": "^2.4.1",
-    "node-machine": "^0.2.4"
+    "node-machine": "^0.2.4",
+    "stripe": "^2.8.0"
   },
   "machinepack": {
-    "focus": "stripe",
-    "machine-api": "~0.0.0",
+    "machinepackDir": "machines",
     "machines": [
-      "create-charge",
       "capture-charge",
-      "list-cards",
       "create-card",
+      "create-charge",
+      "create-customer",
       "delete-card",
-      "update-card"
+      "list-cards"
     ]
   }
 }
