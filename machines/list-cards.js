@@ -8,10 +8,12 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'Valid Stripe API key.',
       example: 'somestring837483749blah',
       required: true
     },
     customer: {
+      description: 'ID of customer tp list cards for.',
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }

@@ -7,11 +7,13 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'Valid Stripe API key.',
       example: 'somestring837483749blah',
       required: true
     },
     charge: {
-      example: 'sdjasnd928u8duasd',
+      description: 'ID of a charge to capture',
+      example: 'ch_14ziQH2eZvKYlo2Ci0BoqQvT',
       required: true
     }
   },

@@ -8,6 +8,7 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'Valid Stripe API key.',
       example: 'somestring837483749blah',
       required: true
     },
@@ -27,6 +28,7 @@ module.exports = {
       required: true
     },
     capture: {
+      description: 'Whether to capture the charge immediately, or just authorize it.  Defaults to false.',
       example: true,
       required: true
     },

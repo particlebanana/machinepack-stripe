@@ -8,15 +8,17 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'Valid Stripe API key.',
       example: 'somestring837483749blah',
       required: true
     },
     token: {
-      description: 'The card should be specified as a token returned by the `Stripe.js` client.  More about tokens: https://stripe.com/docs/stripe.js',
+      description: 'Token of a card to create for the customer, as returned by the Stripe.js SDK.',
       example: 'tok_someCardIdjsd2isnsd',
       required: true
     },
     customer: {
+      description: 'ID of the customer to create the card for.',
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }

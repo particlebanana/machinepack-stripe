@@ -7,10 +7,12 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'Valid Stripe API key.',
       example: 'somestring837483749blah',
       required: true
     },
     card: {
+      description: 'ID of card to delete.',
       example: 'card_14t5VD2eZvKYlo2CbhcljD3Y',
       required: true
     }
