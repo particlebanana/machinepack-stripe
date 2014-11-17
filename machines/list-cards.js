@@ -1,32 +1,31 @@
-/**
- * Module dependencies
- */
-
-// ...
-
-
-
 module.exports = {
-  id: 'list-cards',
-  machinepack: 'stripe',
+
+  identity: 'list-cards',
+  friendlyName: 'List cards',
   description: 'See a list of the cards belonging to a customer or recipient.',
-  notes: ' Note that the 10 most recent cards are always available by default on the customer or recipient object. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional cards.',
-  moreInfoURL: 'https://stripe.com/docs/api#list_cards',
-  noSideEffects: true,
-  //??
+  extendedDescription: 'Note that the 10 most recent cards are always available by default on the customer or recipient object. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional cards.',
+  cacheable: true,
+
   inputs: {
-    id: {
-      description: 'The ID of the customer whose cards will be retrieved',
-      example: 'card_14Yfhj2eZvKYlo2CDMqmQSc6',
+    apiKey: {
+      example: 'somestring837483749blah',
       required: true
     },
-    limit: {
-      description: 'A limit on the number of objects to be returned. Limit can range between 1 and 100 items.',
-      example: 10
+    customer: {
+      example: 'cus_4kmLwU2PvQBeqq',
+      required: true
     }
   },
+
+  defaultExit: 'success',
+  catchallExit: 'error',
+
   exits: {
-    error: {},
+    error: {
+      example: {
+        message: ''
+      }
+    },
     success: {
       example: {
         "object": "list",
@@ -59,8 +58,16 @@ module.exports = {
       }
     }
   },
-  fn: function (inputs,cb) {
-   // TODO
-   return cb(null , {});
+
+  fn: function (inputs, exits) {
+
+    var stripe = require('stripe')(inputs.apiKey);
+
+    stripe.customers.listCards(inputs.customer, function(err, response) {
+      if (err) return exits.error(err);
+      return exits.success(response);
+    });
+
   }
+
 };
