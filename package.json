@@ -26,7 +26,7 @@
     "stripe": "^2.8.0"
   },
   "machinepack": {
-    "machinepackDir": "machines",
+    "machineDir": "machines",
     "machines": [
       "capture-charge",
       "create-card",
