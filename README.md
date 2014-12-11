@@ -1,19 +1,8 @@
+![](http://node-machine.org/images/machine-anthropomorph-for-white-bg.png)
 
-#machinepack-stripe
+This is a [machinepack](http://node-machine.org/), a module which exposes a set of related machines according to the [machinepack specification](http://node-machine.org/spec/machinepack).
+Documentation pages for the machines contained in this module are automatically generated and kept up-to-date on http://node-machine.org.
 
-###Basic usage
+### License
 
-```js
-var stripe = require('machinepack-stripe');
-stripe.createCharge({
-  apiKey: 'somestring837483749blah',
-  amount: 500,
-  currency: 'usd',
-  card: 'tok_someCardIdjsd2isnsd',
-  capture: true
-})
-.exec({
-  success: console.log,
-  error: console.error
-})
-```
+MIT &copy; contributors

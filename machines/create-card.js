@@ -1,39 +1,49 @@
 module.exports = {
 
-  identity: 'create-card',
-  friendlyName: 'Create card',
-  description: 'Create a new card for a customer or recipient.',
-  extendedDescription: 'When you create a new credit card, you must specify a customer or recipient to create it on. Creating a new credit card will not change the card owner\'s existing default credit card; you should update the customer or recipient with a new default_card for that. If the card\'s owner has no default credit card, the added credit card will become the default.  Whenever you create a new card for a customer, Stripe will automatically validate the card.',
+  friendlyName: 'Save new card',
+  description: 'Create a new card for a customer',
+  extendedDescription: 'Creating a new credit card will not change the card owner\'s existing default credit card; you should update the customer or recipient with a new default_card for that. If the card\'s owner has no default credit card, the added credit card will become the default.  Whenever you create a new card for a customer, Stripe will automatically validate the card.',
   cacheable: false,
 
   inputs: {
     apiKey: {
-      description: 'Valid Stripe API key.',
+      description: 'Your Stripe API key',
+      whereToGet: {
+        url: 'https://dashboard.stripe.com/account/apikeys',
+        description: 'Copy either "Test Secret Key" or "Live Secret Key" from your Stripe dashboard.',
+        extendedDescription: 'Make sure you are logged in to your Stripe account, or create an account if you have not already done so.'
+      },
       example: 'somestring837483749blah',
       required: true
     },
     token: {
-      description: 'Token of a card to create for the customer, as returned by the Stripe.js SDK.',
+      description: 'The Stripe token for the card, as returned by the Stripe.js SDK',
+      whereToGet: {
+        moreInfoUrl: 'https://stripe.com/docs/stripe.js'
+      },
       example: 'tok_someCardIdjsd2isnsd',
       required: true
     },
     customer: {
-      description: 'ID of the customer to create the card for.',
+      description: 'The Stripe id of the customer who this card belongs to',
+      whereToGet: {
+        description: 'Create a customer.'
+      },
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }
   },
 
   defaultExit: 'success',
-  catchallExit: 'error',
 
   exits: {
     error: {
-      example: {
-        message: 'Error'
-      }
+      description: 'Unexpected error',
+      variableName: 'err'
     },
     success: {
+      description: 'New card was created',
+      variableName: 'newCard',
       example: {
         "id": "card_14Ye1j2eZvKYlo2CJOPrAfPP",
         "object": "card",

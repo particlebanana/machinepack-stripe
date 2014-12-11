@@ -1,34 +1,43 @@
 module.exports = {
 
-  identity: 'list-cards',
   friendlyName: 'List cards',
-  description: 'See a list of the cards belonging to a customer or recipient.',
-  extendedDescription: 'Note that the 10 most recent cards are always available by default on the customer or recipient object. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional cards.',
+
+  description: 'List all cards in Stripe for a customer.',
+
+  moreInfoUrl: 'https://stripe.com/docs/api#list_cards',
+
   cacheable: true,
 
   inputs: {
     apiKey: {
-      description: 'Valid Stripe API key.',
+      description: 'Your Stripe API key',
+      whereToGet: {
+        url: 'https://dashboard.stripe.com/account/apikeys',
+        description: 'Copy either "Test Secret Key" or "Live Secret Key" from your Stripe dashboard.',
+        extendedDescription: 'Make sure you are logged in to your Stripe account, or create an account if you have not already done so.'
+      },
       example: 'somestring837483749blah',
       required: true
     },
     customer: {
-      description: 'ID of customer tp list cards for.',
+      description: 'The Stripe id of the customer whose cards will be listed',
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }
   },
 
   defaultExit: 'success',
-  catchallExit: 'error',
 
   exits: {
+
     error: {
-      example: {
-        message: ''
-      }
+      description: 'Unexpected error',
+      variableName: 'err'
     },
+
     success: {
+      description: 'Got list of cards',
+      variableName: 'cards',
       example: {
         "object": "list",
         "url": "/v1/customers/cu_14YepJ2eZvKYlo2CUJrwelj2/cards",
@@ -62,6 +71,8 @@ module.exports = {
   },
 
   fn: function (inputs, exits) {
+
+    // TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
 
     var stripe = require('stripe')(inputs.apiKey);
 

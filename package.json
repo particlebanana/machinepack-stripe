@@ -1,15 +1,15 @@
 {
   "name": "machinepack-stripe",
   "version": "0.2.2",
-  "description": "Machines for working with the Stripe API.",
-  "scripts": {
-    "test": "mocha -b"
-  },
+  "description": "Communicate with the Stripe API to charge credit cards, etc.",
   "keywords": [
-    "machine",
-    "machines",
     "stripe",
-    "stripe-api"
+    "payments",
+    "payment-processing",
+    "credit-card",
+    "stripe-api",
+    "machines",
+    "machinepack",
   ],
   "contributors": [
     "Nick Crumrine",
@@ -18,11 +18,12 @@
     "Cody Stoltman"
   ],
   "license": "MIT",
-  "devDependencies": {
-    "mocha": "~1.19.0"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
-    "node-machine": "^0.2.4",
+    "machine": "^1.0.0",
     "stripe": "^2.8.0"
   },
   "machinepack": {
