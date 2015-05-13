@@ -29,6 +29,8 @@
     "stripe": "^2.9.0"
   },
   "machinepack": {
+    "friendlyName": "Stripe",
+    "iconSrc": "http://wiki.redcomponent.com/images/2/25/Stripe_logo_160.png",
     "machineDir": "machines",
     "machines": [
       "capture-charge",
