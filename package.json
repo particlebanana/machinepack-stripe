@@ -23,8 +23,9 @@
     "url": "git://github.com/particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
+    "bluebird": "^2.9.25",
     "machine": "^1.0.0",
-    "stripe": "^2.8.0"
+    "stripe": "^2.9.0"
   },
   "machinepack": {
     "machineDir": "machines",
@@ -34,7 +35,9 @@
       "create-charge",
       "create-customer",
       "delete-card",
-      "list-cards"
+      "list-cards",
+      "subscribe-customer",
+      "update-subscription"
     ]
   }
 }
