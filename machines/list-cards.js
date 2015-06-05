@@ -54,15 +54,15 @@ module.exports = {
             "fingerprint": "Xt5EWLLDS7FJjR1c",
             "country": "US",
             "name": "c_brennan@me.com",
-            "address_line1": null,
-            "address_line2": null,
-            "address_city": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_country": null,
+            "address_line1": "123 Fake St",
+            "address_line2": "Apt 100",
+            "address_city": "Austin",
+            "address_state": "TX",
+            "address_zip": 78701,
+            "address_country": "United States",
             "cvc_check": "pass",
-            "address_line1_check": null,
-            "address_zip_check": null,
+            "address_line1_check": "pass",
+            "address_zip_check": "pass",
             "customer": "cus_4i4zVBclvGqTAN"
           }
         ]

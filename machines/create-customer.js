@@ -43,7 +43,7 @@ module.exports = {
         created: 1410377376,
         livemode: false,
         description: "Customer for weatherforensics@wdtinc.com",
-        email: null,
+        email: "foo@foo.com",
         delinquent: false,
         metadata: {
         },
@@ -53,7 +53,7 @@ module.exports = {
           has_more: false,
           url: "/v1/customers/cus_4kmLwU2PvQBeqq/subscriptions"
         },
-        discount: null,
+        discount: 0,
         account_balance: 0,
         currency: "usd",
         cards: {

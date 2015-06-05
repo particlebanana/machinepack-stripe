@@ -60,53 +60,65 @@ module.exports = {
     success: {
       variableName: 'newCharge',
       example: {
-        "id": "ch_14Yged2eZvKYlo2CcRXx8khJ",
+        "id": "ch_16AL6A2eZvKYlo2CLDZnoiSU",
         "object": "charge",
-        "created": 1409761843,
+        "created": 1433511782,
         "livemode": false,
         "paid": true,
-        "amount": 500,
+        "status": "succeeded",
+        "amount": 99,
         "currency": "usd",
         "refunded": false,
-        "card": {
-          "id": "card_14Yged2eZvKYlo2CacpQy0aC",
+        "source": {
+          "id": "card_14Rjcz2eZvKYlo2C4xiaguSo",
           "object": "card",
           "last4": "4242",
           "brand": "Visa",
           "funding": "credit",
-          "exp_month": 1,
-          "exp_year": 2050,
-          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "exp_month": 8,
+          "exp_year": 2015,
           "country": "US",
-          "name": null,
-          "address_line1": null,
-          "address_line2": null,
-          "address_city": null,
-          "address_state": null,
-          "address_zip": null,
-          "address_country": null,
+          "name": "My Visa",
+          "address_line1": "123 Fake St",
+          "address_line2": "Apt 100",
+          "address_city": "Austin",
+          "address_state": "TX",
+          "address_zip": 78701,
+          "address_country": "United States",
           "cvc_check": "pass",
-          "address_line1_check": null,
-          "address_zip_check": null,
-          "customer": null
+          "address_line1_check": "pasS",
+          "address_zip_check": "pass",
+          "dynamic_last4": 1234,
+          "metadata": {
+          },
+          "customer": "cus_4avTrwptEHCD5w"
         },
         "captured": true,
+        "balance_transaction": "txn_1680Ie2eZvKYlo2CZ2PMxNpk",
+        "amount_refunded": 0,
+        "customer": "cus_4avTrwptEHCD5w",
+        "invoice": "in_16AJzV2eZvKYlo2CQWIMEIo3",
+        "description": "abc",
+        "dispute": "abc",
+        "metadata": {
+        },
+        "statement_descriptor": "Run Club",
+        "fraud_details": {
+        },
+        "receipt_email": "foo@foo.com",
+        "receipt_number": "abc123",
+        "shipping": "shipping",
+        "destination": "dest",
+        "application_fee": 0,
         "refunds": {
           "object": "list",
           "total_count": 0,
           "has_more": false,
-          "url": "/v1/charges/ch_14Yged2eZvKYlo2CcRXx8khJ/refunds"
-        },
-        "balance_transaction": "txn_14WGN92eZvKYlo2Ccrcqvafr",
-        "failure_message": null,
-        "failure_code": null,
-        "amount_refunded": 0,
-        "customer": null,
-        "invoice": null,
-        "description": null,
-        "dispute": null,
-        "statement_description": null,
-        "receipt_email": null
+          "url": "/v1/charges/ch_16AL6A2eZvKYlo2CLDZnoiSU/refunds",
+          "data": [
+
+          ]
+        }
       }
     }
   },
