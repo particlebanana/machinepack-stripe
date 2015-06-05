@@ -49,38 +49,40 @@ module.exports = {
     },
     success: {
       variableName: 'newSubscription',
-      example:    { id: 'sub_6EOW9GHkrQ53Z2',
-  plan: 
-   { interval: 'month',
-     name: 'Gold Plan',
-     created: 1431566401,
-     amount: 2000,
-     currency: 'gbp',
-     id: 'gold',
-     object: 'plan',
-     livemode: false,
-     interval_count: 1,
-     trial_period_days: null,
-     metadata: {},
-     statement_descriptor: null },
-  object: 'subscription',
-  start: 1431505346,
-  status: 'active',
-  customer: 'cus_654EF6eI4JFErdS',
-  cancel_at_period_end: false,
-  current_period_start: 1431507646,
-  current_period_end: 1434186046,
-  ended_at: null,
-  trial_start: null,
-  trial_end: null,
-  canceled_at: null,
-  quantity: 2,
-  application_fee_percent: null,
-  discount: null,
-  tax_percent: null,
-  metadata: {} 
-        }
-     }
+      example:    {
+        id: 'sub_6EOW9GHkrQ53Z2',
+        plan: {
+          interval: 'month',
+          name: 'Gold Plan',
+          created: 1431566401,
+          amount: 2000,
+          currency: 'gbp',
+          id: 'gold',
+          object: 'plan',
+          livemode: false,
+          interval_count: 1,
+          trial_period_days: 0,
+          metadata: {},
+          statement_descriptor: 'foo'
+        },
+        object: 'subscription',
+        start: 1431505346,
+        status: 'active',
+        customer: 'cus_654EF6eI4JFErdS',
+        cancel_at_period_end: false,
+        current_period_start: 1431507646,
+        current_period_end: 1434186046,
+        ended_at: 0,
+        trial_start: 0,
+        trial_end: 0,
+        canceled_at: 0,
+        quantity: 2,
+        application_fee_percent: 0,
+        discount: 0,
+        tax_percent: 0,
+        metadata: {}
+      }
+    }
   },
 
   fn: function (inputs, exits) {
