@@ -39,7 +39,9 @@
       "delete-card",
       "list-cards",
       "subscribe-customer",
-      "update-subscription"
+      "update-subscription",
+      "cancel-subscription",
+      "retrieve-subscription-details"
     ]
   }
 }
