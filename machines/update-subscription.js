@@ -1,8 +1,8 @@
 module.exports = {
 
   friendlyName: 'Update Subscription',
-  description: 'Update a customers subscription to change plan or quantity.',
-  extendedDescription: 'To subscribe a customer, you must first create a customer object with a saved card and a subscription plan (You can do this in your Stripe control panel). If your API key is in test mode, the supplied card won\'t actually be charged, though everything else will occur as if in live mode. (Stripe assumes that the charge would have completed successfully).  Also note that you can use one of the [test cards provided by Stripe](https://stripe.com/docs/testing#cards), each of which always fails in one predetermined ways.',
+  description: 'Update a customer\'s subscription to change plan or quantity.',
+  extendedDescription: 'To subscribe a customer, you must first create a customer object with a saved card and a subscription plan (You can do this in your Stripe control panel). If your API key is in test mode, the supplied card won\'t actually be charged, though everything else will occur as if in live mode. (Stripe assumes that the charge would have completed successfully).  Also note that you can use one of the [test cards provided by Stripe](https://stripe.com/docs/testing#cards), each of which always fails in one predetermined ways. Until this has been done, you cannot update a subscription (In other words, don\'t use this machine to create a subscription)',
   cacheable: false,
 
   inputs: {
@@ -17,7 +17,7 @@ module.exports = {
       required: true
     },
     plan: {
-      description: 'The plan id to subscribe the customer to.',
+      description: 'The plan ID to subscribe the customer to.',
       extendedDescription: 'You can find this in your stripe control panel after creating a subscription.',
       example: 'premium',
       required: true
@@ -28,7 +28,7 @@ module.exports = {
       required: false
     },
     sub: {
-      description: 'The subscription ID of the specific customer plan.',
+      description: 'The subscription ID of the specific customer\'s plan.',
       extendedDescription: 'If you also pass a customer ID, the card must be the ID of a card belonging to the customer. Otherwise, if you do not pass a customer ID, the card you provide must either be a Stripe token, like the ones returned by Stripe.js.',
       example: 'sub_someSubIdjsd2isnsd',
       required: true
@@ -40,7 +40,7 @@ module.exports = {
       required: true
     },
     customer: {
-      description: 'The Stripe id of an existing customer whom is subscribed to the plan.',
+      description: 'The Stripe ID of an existing customer whom is subscribed to the plan.',
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }
