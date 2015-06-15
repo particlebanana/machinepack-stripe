@@ -56,10 +56,10 @@ module.exports = {
           "object": "plan",
           "livemode": false,
           "interval_count": 1,
-          "trial_period_days": null,
+          "trial_period_days": 3,
           "metadata": {
           },
-          "statement_descriptor": null
+          "statement_descriptor": "None"
         },
         "object": "subscription",
         "start": 1434104747,
@@ -68,14 +68,14 @@ module.exports = {
         "cancel_at_period_end": false,
         "current_period_start": 1434104747,
         "current_period_end": 1465727147,
-        "ended_at": null,
-        "trial_start": null,
-        "trial_end": null,
-        "canceled_at": null,
+        "ended_at": "None",
+        "trial_start": "None",
+        "trial_end": "None",
+        "canceled_at": "None",
         "quantity": 1,
-        "application_fee_percent": null,
-        "discount": null,
-        "tax_percent": null,
+        "application_fee_percent": 5,
+        "discount": 5,
+        "tax_percent": 5,
         "metadata": {
         }
       }
