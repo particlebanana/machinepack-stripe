@@ -24,7 +24,7 @@
     "url": "git@github.com:particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
-    "machine": "~9.0.0",
+    "machine": "^10.3.1",
     "stripe": "~3.3.4"
   },
   "machinepack": {
@@ -45,6 +45,9 @@
       "one-off-charge"
     ],
     "testsUrl": "https://travis-ci.org/particlebanana/machinepack-stripe"
+  },
+  "devDependencies": {
+    "test-machinepack-mocha": "^2.1.1"
   },
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
