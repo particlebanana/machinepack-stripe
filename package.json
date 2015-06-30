@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/particlebanana/machinepack-stripe.git"
+    "url": "git@github.com:particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
     "machine": "~9.0.0",
@@ -43,6 +43,10 @@
       "cancel-subscription",
       "retrieve-subscription-details",
       "one-off-charge"
-    ]
+    ],
+    "testsUrl": "https://travis-ci.org/particlebanana/machinepack-stripe"
+  },
+  "scripts": {
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   }
 }

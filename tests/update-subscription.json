@@ -1,0 +1,10 @@
+{
+  "machine": "update-subscription",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}

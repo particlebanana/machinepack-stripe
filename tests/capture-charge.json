@@ -1,0 +1,10 @@
+{
+  "machine": "capture-charge",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}

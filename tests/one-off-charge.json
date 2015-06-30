@@ -1,0 +1,10 @@
+{
+  "machine": "one-off-charge",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "machine": "create-charge",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}
