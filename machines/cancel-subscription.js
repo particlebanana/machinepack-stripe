@@ -57,8 +57,7 @@ module.exports = {
           "livemode": false,
           "interval_count": 1,
           "trial_period_days": 3,
-          "metadata": {
-          },
+          "metadata": {},
           "statement_descriptor": "None"
         },
         "object": "subscription",
@@ -76,9 +75,9 @@ module.exports = {
         "application_fee_percent": 5,
         "discount": 5,
         "tax_percent": 5,
-        "metadata": {
-        }
+        "metadata": {}
       }
+    }
   },
 
   fn: function (inputs, exits) {
