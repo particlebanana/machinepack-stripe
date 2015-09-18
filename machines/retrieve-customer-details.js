@@ -33,7 +33,7 @@ module.exports = {
     success: {
      "object": "customer",
      "created": 1442577004,
-     "id": "cus_70O9szaefdsh0TZ",
+     "id": "cus_70O9szY57bh0TZ",
      "livemode": false,
      "description": null,
      "email": null,
