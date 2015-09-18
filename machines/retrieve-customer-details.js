@@ -17,7 +17,7 @@ module.exports = {
       required: true
     },
     customer: {
-      description: 'The Stripe id of an existing customer whom is subscribed to the plan.',
+      description: 'The identifier of the customer to be retrieved.',
       example: 'cus_4kmLwU2PvQBeqq',
       required: true
     }
