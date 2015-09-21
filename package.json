@@ -42,6 +42,7 @@
       "update-subscription",
       "cancel-subscription",
       "retrieve-subscription-details",
+      "retrieve-customer-details",
       "one-off-charge"
     ],
     "testsUrl": "https://travis-ci.org/particlebanana/machinepack-stripe"
