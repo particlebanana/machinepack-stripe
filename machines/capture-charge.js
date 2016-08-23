@@ -3,7 +3,7 @@ module.exports = {
   friendlyName: 'Capture charge',
 
 
-  description: 'Capture the payment of a previously-created charge in Stripe.',
+  description: 'Capture the payment of a previously-created charge.',
 
 
   extendedDescription: 'This is the second half of the two-step payment flow, where first you created a charge with the "capture" option set to false.  Uncaptured payments expire exactly seven days after they are created. If they are not captured by that point in time, they will be marked as refunded and will no longer be capturable.',

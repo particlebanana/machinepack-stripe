@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'List sources',
 
 
-  description: 'List all payment sources in Stripe for a customer.',
+  description: 'List all payment sources for a customer.',
 
 
   moreInfoUrl: 'https://stripe.com/docs/api#list_source',

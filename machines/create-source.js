@@ -4,10 +4,10 @@ module.exports = {
   friendlyName: 'Add source to customer',
 
 
-  description: 'Add a new payment source (e.g. credit card or bank account) to a customer.',
+  description: 'Add a new payment source to a customer.',
 
 
-  extendedDescription: 'Creating a new source will not change the customer\'s existing default source; you should update the customer or recipient with a new "Default source" for that. If the customer has no default source, the added source will become the default.  Whenever you create a new card source for a customer, Stripe will automatically validate the card.',
+  extendedDescription: 'A payment source can be a credit/debit card or a bank account.  Creating a new source will not change the customer\'s existing default source; you should update the customer or recipient with a new "Default source" for that. If the customer has no default source, the added source will become the default.  Whenever you create a new card source for a customer, Stripe will automatically validate the card.',
 
 
   inputs: {

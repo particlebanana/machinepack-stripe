@@ -36,7 +36,7 @@ module.exports = {
     },
 
     coupon: {
-      description: 'The code of a coupon to apply to this subscription',
+      description: 'The code of a coupon to apply to this subscription.',
       extendedDescription: 'A coupon applied to a subscription will only affect invoices created for that particular subscription.',
       example: 'HALFOFF'
     },

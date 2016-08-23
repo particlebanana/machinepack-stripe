@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Create customer',
 
 
-  description: 'Create a new customer in Stripe.',
+  description: 'Create a new customer.',
 
 
   inputs: {

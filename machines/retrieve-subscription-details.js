@@ -4,10 +4,7 @@ module.exports = {
   friendlyName: 'Retrieve Subscription Details',
 
 
-  description: 'Retrieve details of a specific, active subscription for a customer.',
-
-
-  extendedDescription: 'By default, you can see the 10 most recent active subscriptions stored on a customer directly on the customer object, but you can also retrieve details about a specific active subscription for a customer.',
+  description: 'Retrieve details of a subscription.',
 
 
   sideEffects: 'cacheable',
@@ -18,7 +15,7 @@ module.exports = {
     apiKey: require('../constants/apiKey.input'),
 
     subscription: {
-      description: 'The subscription ID of the subscription you wish to retrieve details for.',
+      description: 'The ID of the subscription you wish to retrieve details for.',
       extendedDescription: 'When you create a subscription for a customer, this will have a specific ID.',
       example: 'sub_someSubIdjsd2isnsd',
       required: true
@@ -55,7 +52,7 @@ module.exports = {
       // exist, etc.), possibly via a separate `negotiateError` machine.
       if (err) return exits.error(err);
 
-      // Return the subscription details through the `success` exit.
+      // Return the new subscription details through the `success` exit.
       return exits.success(subscription);
     });
 
