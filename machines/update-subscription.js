@@ -69,7 +69,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'Updated Stripe subscription',
       outputDescription: 'The details of the newly-updated Stripe subscription.',
-      outputExample: require('../constants/subscription.object')
+      outputExample: require('../constants/subscription.schema')
     }
 
   },

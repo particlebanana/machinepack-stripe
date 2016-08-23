@@ -30,7 +30,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'Stripe customer details',
       outputDescription: 'The details of a Stripe customer, including payment sources and subscriptions.',
-      outputExample: require('../constants/customer.object')
+      outputExample: require('../constants/customer.schema')
     },
 
     notFound: {

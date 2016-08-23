@@ -31,7 +31,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'Deleted Stripe payment source',
       outputDescription: 'Details of the just-deleted Stripe payment source.',
-      outputExample: require('../constants/source.object')
+      outputExample: require('../constants/source.schema')
     }
   },
 

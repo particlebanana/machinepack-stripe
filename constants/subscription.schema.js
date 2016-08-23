@@ -1,3 +1,6 @@
+// Stripe API subscription object -- see https://stripe.com/docs/api#subscriptions for full documentation.
+// This is used in the output from `cancelSubscription`, `subscribeCustomer` and `updateSubscription`,
+// and is also embedded in the Customer schema (see customer.schema.js).
 module.exports = {
   'id': 'sub_929dHmk5spqvgi',
   'object': 'subscription',

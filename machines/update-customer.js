@@ -59,7 +59,7 @@ module.exports = {
 
       outputFriendlyName: 'Updated Stripe customer',
       outputDescription: 'Details of the newly-updated Stripe customer.',
-      outputExample: require('../constants/customer.object')
+      outputExample: require('../constants/customer.schema')
     }
   },
 

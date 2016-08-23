@@ -47,7 +47,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'New Stripe customer',
       outputDescription: 'Details of the newly-created Stripe customer, including payment sources and subscriptions.',
-      outputExample: require('../constants/customer.object')
+      outputExample: require('../constants/customer.schema')
     }
   },
 

@@ -1,4 +1,10 @@
-// Note -- this is a superset of all fields in the card, bank_account and bitcoint_receiver objects
+// Stripe API payment source object.
+// Note -- this is a superset of all fields in the card, bank_account and bitcoint_receiver objects.
+// See https://stripe.com/docs/api#cards, https://stripe.com/docs/api#bitcoin_receivers and
+// https://stripe.com/docs/api#bank_accounts for full documentation.
+//
+// This is used in the output from `createSource`, `deleteSource` and `listSources`, and is
+// also embedded in the Customer schema (see customer.schema.js).
 module.exports = {
   'id': 'ba_18k5KBAE8iIXJx4mnWV35Rnl',
   'object': 'bank_account or card or bitcoin_receiver',

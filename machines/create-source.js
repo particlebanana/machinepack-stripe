@@ -35,7 +35,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'New Stripe payment source',
       outputDescription: 'Details of the newly-created Stripe payment source.',
-      outputExample: require('../constants/source.object')
+      outputExample: require('../constants/source.schema')
     }
   },
 

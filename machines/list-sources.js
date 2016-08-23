@@ -34,7 +34,7 @@ module.exports = {
         'object': 'list',
         'url': '/v1/customers/cu_14YepJ2eZvKYlo2CUJrwelj2/sources',
         'has_more': false,
-        'data': [require('../constants/source.object')]
+        'data': [require('../constants/source.schema')]
       }
     }
   },

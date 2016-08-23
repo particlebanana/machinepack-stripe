@@ -35,7 +35,7 @@ module.exports = {
     success: {
       outputFriendlyName: 'Cancelled Stripe subscription',
       outputDescription: 'Details of the Stripe subscription that was cancelled.',
-      outputExample: require('../constants/subscription.object')
+      outputExample: require('../constants/subscription.schema')
     }
   },
 

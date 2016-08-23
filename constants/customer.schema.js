@@ -1,3 +1,5 @@
+// Stripe API customer object -- see https://stripe.com/docs/api#customers for full documentation.
+// This is used in the output from `createCustomer`, `retrieveCustomerDetails` and `updateCustomer`.
 module.exports = {
   'id': 'cus_92418YMzH9wiaI',
   'object': 'customer',
@@ -14,14 +16,14 @@ module.exports = {
   'shipping': 0,
   'sources': {
     'object': 'list',
-    'data': [require('./source.object')],
+    'data': [require('./source.schema')],
     'has_more': false,
     'total_count': 0,
     'url': '/v1/customers/cus_92418YMzH9wiaI/sources'
   },
   'subscriptions': {
     'object': 'list',
-    'data': [require('./subscription.object')],
+    'data': [require('./subscription.schema')],
     'has_more': false,
     'total_count': 0,
     'url': '/v1/customers/cus_92418YMzH9wiaI/subscriptions'
