@@ -43,6 +43,7 @@
       "cancel-subscription",
       "retrieve-subscription-details",
       "retrieve-customer-details",
+      "update-customer"
     ],
     "testsUrl": "https://travis-ci.org/particlebanana/machinepack-stripe"
   },
