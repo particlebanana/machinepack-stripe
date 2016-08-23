@@ -1,113 +1,128 @@
 module.exports = {
 
+
   friendlyName: 'Update Subscription',
+
+
   description: 'Update a customer\'s subscription to change plan or quantity.',
+
+
   extendedDescription: 'To subscribe a customer, you must first create a customer object with a saved card and a subscription plan (You can do this in your Stripe control panel). If your API key is in test mode, the supplied card won\'t actually be charged, though everything else will occur as if in live mode. (Stripe assumes that the charge would have completed successfully).  Also note that you can use one of the [test cards provided by Stripe](https://stripe.com/docs/testing#cards), each of which always fails in one predetermined ways. Until this has been done, you cannot update a subscription (In other words, don\'t use this machine to create a subscription)',
-  cacheable: false,
+
+
+  sideEffects: 'idempotent',
+
 
   inputs: {
-    apiKey: {
-      description: 'Your Stripe API key',
-      whereToGet: {
-        url: 'https://dashboard.stripe.com/account/apikeys',
-        description: 'Copy either "Test Secret Key" or "Live Secret Key" from your Stripe dashboard.',
-        extendedDescription: 'Make sure you are logged in to your Stripe account, or create an account if you have not already done so.'
-      },
-      example: 'somestring837483749blah',
-      required: true
-    },
-    plan: {
-      description: 'The plan ID to subscribe the customer to.',
-      extendedDescription: 'You can find this in your stripe control panel after creating a subscription.',
-      example: 'premium',
-      required: true
-    },
-    quantity: {
-      description: 'If using a plan with multiple users or other dynamic elements, specify the quantity.',
-      example: 20,
-      required: false
-    },
-    sub: {
+
+    apiKey: require('../constants/apiKey.input'),
+
+    subscription: {
       description: 'The subscription ID of the specific customer\'s plan.',
       extendedDescription: 'If you also pass a customer ID, the card must be the ID of a card belonging to the customer. Otherwise, if you do not pass a customer ID, the card you provide must either be a Stripe token, like the ones returned by Stripe.js.',
       example: 'sub_someSubIdjsd2isnsd',
       required: true
     },
-    prorate: {
-      description: 'Should the subscription be prorated during the switch? true/false',
-      extendedDescription: 'A pro-rata example situation can be seen here: https://stripe.com/docs/subscriptions#changing-a-customers-subscriptions',
-      example: 'true',
-      required: true
+
+    plan: {
+      description: 'The plan ID to subscribe the customer to.',
+      extendedDescription: 'You can find this in your stripe control panel after creating a subscription.',
+      example: 'premium',
     },
-    customer: {
-      description: 'The Stripe ID of an existing customer whom is subscribed to the plan.',
-      example: 'cus_4kmLwU2PvQBeqq',
-      required: true
-    }
+
+    quantity: {
+      description: 'If using a plan with multiple users or other dynamic elements, specify the quantity.',
+      example: 20
+    },
+
+    coupon: {
+      description: 'The code of a coupon to apply to this subscription',
+      extendedDescription: 'A coupon applied to a subscription will only affect invoices created for that particular subscription.',
+      example: 'HALFOFF'
+    },
+
+    trialEnd: {
+      friendlyName: 'Trial end date',
+      description: 'Timestamp representing the end of the trial period the customer will get before being charged for the first time.',
+      extendedDescription: 'If set, trial_end will override the default trial period of the plan the customer is being subscribed to.',
+      example: 1471583633
+    },
+
+    prorate: {
+      friendlyName: 'Prorate?',
+      description: 'Whether the subscription should be prorated with respect to changes in plan, quantity or trial length.  Defaults to `true`.',
+      extendedDescription: 'A pro-rata example situation can be seen here: https://stripe.com/docs/subscriptions#changing-a-customers-subscriptions',
+      example: true,
+      defaultsTo: true
+    },
+
+    prorationDate: {
+      description: 'If set, the proration will be calculated as though the subscription was updated at the given time.',
+      extendedDescription: 'This can be used to apply exactly the same proration that was previewed with upcoming invoice endpoint. It can also be used to implement custom proration logic, such as prorating by day instead of by second, by providing the time that you wish to use for proration calculations.',
+      example: 1471583633
+    },
+
   },
 
-  defaultExit: 'success',
-
   exits: {
-    error: {
-      description: 'Unexpected error',
-      variableName: 'err'
-    },
+
     success: {
-      variableName: 'updatedSubscription',
-      example: {
-        id: 'sub_6EOW9IIKIM3Z2',
-        plan: {
-          interval: 'month',
-          name: 'Gold Plan',
-          created: 1431126401,
-          amount: 2000,
-          currency: 'gbp',
-          id: 'gold',
-          object: 'plan',
-          livemode: false,
-          interval_count: 1,
-          trial_period_days: 0,
-          metadata: {},
-          statement_descriptor: 0
-        },
-        object: 'subscription',
-        start: 1431503203,
-        status: 'active',
-        customer: 'cus_6E4F9eI4JFErtsE',
-        cancel_at_period_end: false,
-        current_period_start: 1431507646,
-        current_period_end: 1434186046,
-        ended_at: 0,
-        trial_start: 0,
-        trial_end: 0,
-        canceled_at: 0,
-        quantity: 48,
-        application_fee_percent: 0,
-        discount: 0,
-        tax_percent: 0,
-        metadata: {}
-      }
+      outputFriendlyName: 'Updated Stripe subscription',
+      outputDescription: 'The details of the newly-updated Stripe subscription.',
+      outputExample: require('../constants/subscription.object')
     }
+
   },
 
   fn: function (inputs, exits) {
 
-    // TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
-
+    // Import `stripe`, and initialize it with the give API key.
     var stripe = require('stripe')(inputs.apiKey);
 
-    // Get the base options
+    // Declare a var to hold options.
     var options = {
-      plan: inputs.plan,
-      quantity: inputs.quantity,
       prorate: inputs.prorate
     };
 
+    // Add in plan if provided.
+    if (inputs.plan) {
+      options.plan = inputs.plan;
+    }
 
-    stripe.customers.updateSubscription(inputs.customer, inputs.sub, options, function(err, charge) {
+    // Add in quantity if provided.
+    if (inputs.quantity) {
+      options.quantity = inputs.quantity;
+    }
+
+    // Add in coupon if provided.
+    if (inputs.coupon) {
+      options.coupon = inputs.coupon;
+    }
+
+    // Add in metadata if provided.
+    if (inputs.metadata) {
+      options.metadata = inputs.metadata;
+    }
+
+    // Add in trial end date if provided.
+    if (inputs.trialEnd) {
+      options.trial_end = inputs.trialEnd;
+    }
+
+    // Add in proration date if provided.
+    if (inputs.prorationDate) {
+      options.proration_date = inputs.prorationDate;
+    }
+
+    // Use the Stripe API to update the subscription's details.
+    stripe.subscriptions.update(inputs.subscription, options, function(err, updatedSubscription) {
+      // Send any errors through the `error` exit.
+      // TODO: handle more specific exits (i.e. rate limit, customer does not
+      // exist, etc.), possibly via a separate `negotiateError` machine.
       if (err) return exits.error(err);
-      return exits.success(charge);
+
+      // Return the updated subscription details through the `success` exit.
+      return exits.success(updatedSubscription);
     });
 
   }
