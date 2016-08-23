@@ -33,7 +33,7 @@
     "machineDir": "machines",
     "machines": [
       "capture-charge",
-      "create-card",
+      "create-source",
       "create-charge",
       "create-customer",
       "delete-card",
