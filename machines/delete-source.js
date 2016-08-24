@@ -45,7 +45,7 @@ module.exports = {
       // Send any errors through the `error` exit.
       // TODO: handle more specific exits (i.e. rate limit, customer does not
       // exist, etc.), possibly via a separate `negotiateError` machine.
-      if (err) return exits.error(err);
+      if (err) {return exits.error(err);}
 
       // Return info about the deleted source through the `success` exit.
       return exits.success(source);

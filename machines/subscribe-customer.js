@@ -108,7 +108,7 @@ module.exports = {
 
     // Use the Stripe API to create the new subscription.
     stripe.subscriptions.create(options, function(err, subscription) {
-      if (err) return exits.error(err);
+      if (err) {return exits.error(err);}
       return exits.success(subscription);
     });
 
