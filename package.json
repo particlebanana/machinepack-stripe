@@ -24,7 +24,7 @@
     "url": "git@github.com:particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
-    "machine": "^12.4.0",
+    "machine": "^13.0.0-10",
     "stripe": "4.9.1"
   },
   "machinepack": {
