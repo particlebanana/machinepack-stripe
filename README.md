@@ -15,6 +15,15 @@ Communicate with the Stripe API to charge credit cards, etc.
 $ npm install machinepack-stripe
 ```
 
+## Tests
+
+To run the tests, do:
+
+```
+STRIPE_API_KEY_FOR_TESTS=yourDummyStripeApiKeyHere npm test
+```
+
+
 ## Usage
 
 For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/machinepack-stripe" title="Communicate with the Stripe API to charge credit cards, etc. (for node.js)">http://node-machine.org/machinepack-stripe</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
@@ -27,5 +36,5 @@ Learn more at <a href="http://node-machine.org/implementing/FAQ" title="Machine 
 
 ## License
 
-MIT &copy; 2015 contributors
+MIT &copy; 2015 The Treeline Co. & contributors
 
