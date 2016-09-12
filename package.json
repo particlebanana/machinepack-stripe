@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "machine": "^12.4.0",
-    "stripe": "~4.9.0"
+    "stripe": "4.9.1"
   },
   "machinepack": {
     "friendlyName": "Stripe",
