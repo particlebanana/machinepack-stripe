@@ -106,7 +106,7 @@ describe('Stripe.captureCharge()', function (){
           apiKey: 't0t4lly_FAKE!!',
           // ...   (TODO: add other argins)
         }).exec({
-          error: function (err) {
+          error: function (/*err*/) {
             return done();
           },
           success: function (){
