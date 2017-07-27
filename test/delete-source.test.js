@@ -1,6 +1,6 @@
 var util = require('util');
 var assert = require('assert');
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 var Stripe = require('../');
 
 
@@ -10,7 +10,7 @@ if (!process.env.STRIPE_API_KEY_FOR_TESTS) {
 
 
 
-describe('Stripe.retrieveCustomerDetails()', function (){
+describe('Stripe.deleteSource()', function (){
 
 
   //  ██████╗ ███████╗███████╗ ██████╗ ██████╗ ███████╗██╗  ██╗ █████╗ ███╗   ██╗██████╗
@@ -45,7 +45,7 @@ describe('Stripe.retrieveCustomerDetails()', function (){
   describe('with basic usage', function (){
 
     it('should work', function (done){
-      Stripe.retrieveCustomerDetails({
+      Stripe.deleteSource({
         apiKey: process.env.STRIPE_API_KEY_FOR_TESTS,
         // ...   (TODO: add other argins)
       }).exec(function (err, outputIfRelevant) {
@@ -102,7 +102,7 @@ describe('Stripe.retrieveCustomerDetails()', function (){
     //  └┴┘┴ ┴ ┴ ┴  ╩╝╚╝ ╚╝ ╩ ╩╩═╝╩═╩╝  ╩ ╩╩  ╩  ╩ ╩╚═╝ ╩
     describe('with invalid API key', function (){
       it('should NOT work', function (done){
-        Stripe.retrieveCustomerDetails({
+        Stripe.deleteSource({
           apiKey: 't0t4lly_FAKE!!',
           // ...   (TODO: add other argins)
         }).exec({
@@ -124,7 +124,7 @@ describe('Stripe.retrieveCustomerDetails()', function (){
     // TODO: Tests for any other exceptions and edge cases.
     // describe('with todo TODO todo TODO', function (){
     //   it('should exit via `foobar`', function (done){
-    //     Stripe.retrieveCustomerDetails({
+    //     Stripe.deleteSource({
     //       apiKey: process.env.STRIPE_API_KEY_FOR_TESTS,
     //       // ...   (TODO: add other argins)
     //     }).exec({

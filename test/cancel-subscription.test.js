@@ -1,6 +1,6 @@
 var util = require('util');
 var assert = require('assert');
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 var Stripe = require('../');
 
 
@@ -10,7 +10,7 @@ if (!process.env.STRIPE_API_KEY_FOR_TESTS) {
 
 
 
-describe('Stripe.captureCharge()', function (){
+describe('Stripe.cancelSubscription()', function (){
 
 
   //  ██████╗ ███████╗███████╗ ██████╗ ██████╗ ███████╗██╗  ██╗ █████╗ ███╗   ██╗██████╗
@@ -45,9 +45,9 @@ describe('Stripe.captureCharge()', function (){
   describe('with basic usage', function (){
 
     it('should work', function (done){
-      Stripe.captureCharge({
+      Stripe.cancelSubscription({
         apiKey: process.env.STRIPE_API_KEY_FOR_TESTS,
-        // ...   (TODO: add other argins)
+        subscription: 'sub_someSubIdjsd2isnsd'
       }).exec(function (err, outputIfRelevant) {
         if (err) { return done(err); }
         try {
@@ -102,7 +102,7 @@ describe('Stripe.captureCharge()', function (){
     //  └┴┘┴ ┴ ┴ ┴  ╩╝╚╝ ╚╝ ╩ ╩╩═╝╩═╩╝  ╩ ╩╩  ╩  ╩ ╩╚═╝ ╩
     describe('with invalid API key', function (){
       it('should NOT work', function (done){
-        Stripe.captureCharge({
+        Stripe.cancelSubscription({
           apiKey: 't0t4lly_FAKE!!',
           // ...   (TODO: add other argins)
         }).exec({
@@ -124,7 +124,7 @@ describe('Stripe.captureCharge()', function (){
     // TODO: Tests for any other exceptions and edge cases.
     // describe('with todo TODO todo TODO', function (){
     //   it('should exit via `foobar`', function (done){
-    //     Stripe.captureCharge({
+    //     Stripe.cancelSubscription({
     //       apiKey: process.env.STRIPE_API_KEY_FOR_TESTS,
     //       // ...   (TODO: add other argins)
     //     }).exec({

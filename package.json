@@ -24,13 +24,13 @@
     "url": "git@github.com:particlebanana/machinepack-stripe.git"
   },
   "dependencies": {
-    "machine": "^13.0.0-10",
+    "machine": "^15.0.0-2",
     "stripe": "4.9.1"
   },
   "machinepack": {
     "friendlyName": "Stripe",
     "iconSrc": "http://nilefrater.co.uk/images/stripe_logo_160.png",
-    "machineDir": "machines",
+    "machineDir": "lib",
     "machines": [
       "capture-charge",
       "create-source",
@@ -48,10 +48,13 @@
     "testsUrl": "https://travis-ci.org/particlebanana/machinepack-stripe"
   },
   "devDependencies": {
-    "lodash": "3.10.1",
+    "eslint": "3.19.0",
+    "@sailshq/lodash": "^3.10.2",
     "mocha": "3.0.2"
   },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha -R dot -t 10000 --recursive tests/"
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
+    "custom-tests": "node node_modules/mocha/bin/mocha"
   }
 }
