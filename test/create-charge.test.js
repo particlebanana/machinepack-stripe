@@ -105,7 +105,7 @@ describe('Stripe.createCharge()', function (){
         Stripe.createCharge({
           apiKey: 't0t4lly_FAKE!!',
           // ...   (TODO: add other argins)
-        }).exec({
+        }).switch({
           error: function (/*err*/) {
             return done();
           },
@@ -127,7 +127,7 @@ describe('Stripe.createCharge()', function (){
     //     Stripe.createCharge({
     //       apiKey: process.env.STRIPE_API_KEY_FOR_TESTS,
     //       // ...   (TODO: add other argins)
-    //     }).exec({
+    //     }).switch({
     //       error: function (err) {
     //         return done(err);
     //       },
