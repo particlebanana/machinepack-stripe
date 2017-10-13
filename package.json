@@ -44,7 +44,7 @@
       "retrieve-subscription-details",
       "retrieve-customer-details",
       "update-customer",
-      "set-global-credentials",
+      "set-global-defaults",
       "create-account",
       "update-account"
     ],
